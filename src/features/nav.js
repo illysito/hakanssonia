@@ -4,22 +4,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 function nav() {
-  const nav = document.querySelector('.nav__section')
-  const hero = document.querySelector('.hero__section')
   const headings = document.querySelectorAll('.nav-link')
   const logo = document.querySelector('.home-link')
-
-  gsap.to(nav, {
-    height: '10svh',
-    ease: 'power2.out',
-    scrollTrigger: {
-      trigger: hero,
-      start: 'bottom 95%',
-      end: 'bottom 45%',
-      scrub: 1,
-      markers: false,
-    },
-  })
 
   function onHover(event) {
     const h = event.currentTarget.firstElementChild
