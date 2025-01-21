@@ -1,3 +1,4 @@
+import footer from './features/footer'
 import gallery from './features/gallery'
 import headingMask from './features/heading_mask'
 import heroIntro from './features/hero_intro'
@@ -20,3 +21,4 @@ if (document.body.classList.contains('body__home')) runHomeFunctions()
 if (document.body.classList.contains('body__fotografia')) runGalleryFunctions()
 
 nav()
+footer()

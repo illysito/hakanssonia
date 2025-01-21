@@ -3,7 +3,8 @@ import gsap from 'gsap'
 function gallery() {
   const categories = document.querySelectorAll('.category_title')
   //prettier-ignore
-  const galleries = Array.from(document.querySelector('.gallery__section').children)
+  const gallery_section = document.querySelector('.gallery__section')
+  const galleries = Array.from(gallery_section.children)
 
   function showCategory(event) {
     const currentCategory = event.currentTarget
@@ -22,16 +23,18 @@ function gallery() {
 
     galleries.forEach((gallery, index) => {
       if (index === currentIndex) {
-        gsap.to(gallery, {
+        const gal_height = gallery.getBoundingClientRect().height
+        gsap.set(gallery, {
           opacity: 1,
           pointerEvents: 'auto',
-          duration: 0.2,
+        })
+        gsap.to(gallery_section, {
+          height: gal_height,
         })
       } else {
-        gsap.to(gallery, {
+        gsap.set(gallery, {
           opacity: 0,
           pointerEvents: 'none',
-          duration: 0.2,
         })
       }
     })
