@@ -33,6 +33,10 @@ function gallery() {
 
   // PARALLAX
   imgContainers.forEach((cont) => {
+    if (!cont.dataset.inViewport) {
+      console.log('ciao')
+      return
+    }
     const randomAmp = 32
     const random = randomAmp * Math.random() - randomAmp / 2
     gsap.to(cont, {
@@ -61,6 +65,12 @@ function gallery() {
       mouseY
     )
     imgs.forEach((img) => {
+      const wrapper = img.parentElement
+      const cont = wrapper.parentElement
+      if (!cont.dataset.inViewport) {
+        console.log('ciao')
+        return
+      }
       gsap.to(img, {
         x: -normalizedX,
         y: -normalizedY,
