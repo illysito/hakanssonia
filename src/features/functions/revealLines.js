@@ -27,10 +27,10 @@ function revealLines(input) {
     // Move the line inside the wrapper
     wrapper.appendChild(line)
 
-    // gsap.set(line, {
-    //   yPercent: -100,
-    //   opacity: 0,
-    // })
+    gsap.set(line, {
+      yPercent: -100,
+      opacity: 0,
+    })
   })
 
   // trigger on scroll

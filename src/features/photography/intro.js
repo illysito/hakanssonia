@@ -3,8 +3,8 @@
 import revealLines from '../functions/revealLines'
 
 function intro() {
-  const categories = document.querySelectorAll('.cat-h')
-  categories.forEach((c) => {
+  const descs = document.querySelectorAll('.desc-p')
+  descs.forEach((c) => {
     revealLines(c)
   })
 }
