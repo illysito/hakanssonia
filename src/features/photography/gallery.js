@@ -51,14 +51,21 @@ function gallery() {
   // WINDOW EFFECT
   let mouseX = 0
   let mouseY = 0
+  const windowAmp = 12
 
   function windowEffect() {
-    const normalizedX = gsap.utils.mapRange(0, window.innerWidth, -8, 8, mouseX)
+    const normalizedX = gsap.utils.mapRange(
+      0,
+      window.innerWidth,
+      -windowAmp,
+      windowAmp,
+      mouseX
+    )
     const normalizedY = gsap.utils.mapRange(
       0,
       window.innerHeight,
-      -8,
-      8,
+      -windowAmp,
+      windowAmp,
       mouseY
     )
     const randomAmp = 2
