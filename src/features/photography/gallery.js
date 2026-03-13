@@ -65,7 +65,7 @@ function gallery() {
         x: -normalizedX,
         y: -normalizedY,
         duration: 1.6,
-        ease: 'power2.inOut',
+        // ease: 'power2.inOut',
       })
     })
 
