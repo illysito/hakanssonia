@@ -5,6 +5,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 function gallery() {
   const imgContainers = document.querySelectorAll('.img-container')
+  const imgs = document.querySelectorAll('.img')
 
   function markIfInViewport() {
     // OBSERVER
@@ -30,8 +31,9 @@ function gallery() {
   }
   markIfInViewport()
 
+  // PARALLAX
   imgContainers.forEach((cont) => {
-    const randomAmp = 4
+    const randomAmp = 32
     const random = randomAmp * Math.random() - randomAmp / 2
     gsap.to(cont, {
       y: 120 + random,
@@ -42,8 +44,37 @@ function gallery() {
         scrub: true,
       },
     })
+  })
 
-    if (cont.dataset.inViewport) console.log(cont)
+  // WINDOW EFFECT
+
+  let mouseX = 0
+  let mouseY = 0
+
+  function windowEffect() {
+    const normalizedX = gsap.utils.mapRange(0, window.innerWidth, -8, 8, mouseX)
+    const normalizedY = gsap.utils.mapRange(
+      0,
+      window.innerHeight,
+      -8,
+      8,
+      mouseY
+    )
+    imgs.forEach((img) => {
+      gsap.to(img, {
+        x: normalizedX,
+        y: normalizedY,
+        duration: 0.2,
+      })
+    })
+
+    requestAnimationFrame(windowEffect)
+  }
+  windowEffect()
+
+  window.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX
+    mouseY = e.clientY
   })
 }
 
