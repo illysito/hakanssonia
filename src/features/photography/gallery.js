@@ -68,8 +68,8 @@ function gallery() {
       windowAmp,
       mouseY
     )
-    const randomAmp = 2
-    const random = randomAmp * Math.random()
+    // const randomAmp = 2
+    const random = 1
     imgs.forEach((img) => {
       const wrapper = img.parentElement
       const cont = wrapper.parentElement
