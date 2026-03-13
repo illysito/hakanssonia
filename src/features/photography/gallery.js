@@ -35,10 +35,10 @@ function gallery() {
 
   // PARALLAX
   imgContainers.forEach((cont) => {
-    const randomAmp = 32
+    const randomAmp = 52
     const random = randomAmp * Math.random() - randomAmp / 2
     gsap.to(cont, {
-      y: 120 + random,
+      y: 140 + random,
       scrollTrigger: {
         trigger: cont,
         start: 'top 120%',
