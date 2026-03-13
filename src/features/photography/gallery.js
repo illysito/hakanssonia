@@ -42,6 +42,8 @@ function gallery() {
         scrub: true,
       },
     })
+
+    if (cont.dataset.inViewport) console.log(cont)
   })
 }
 
