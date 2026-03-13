@@ -21,8 +21,8 @@ function gallery() {
       },
       {
         root: null, // viewport
-        rootMargin: '0px',
-        threshold: 0.1, // counts as visible when 10% is inside viewport
+        rootMargin: '80px',
+        threshold: 0.0, // counts as visible when 10% is inside viewport
       }
     )
 
