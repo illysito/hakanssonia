@@ -15,6 +15,8 @@ function gallery() {
           entry.target.dataset.inViewport = entry.isIntersecting
             ? 'true'
             : 'false'
+
+          console.log(entry)
         })
       },
       {
