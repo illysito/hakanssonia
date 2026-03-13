@@ -45,7 +45,7 @@ function gallery() {
       duration: 1.2,
       scrollTrigger: {
         trigger: cont,
-        start: 'top 90&',
+        start: 'top 90%',
         // end: 'top 80%',
         // scrub: true,
       },
