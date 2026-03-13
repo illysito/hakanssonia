@@ -42,10 +42,11 @@ function gallery() {
     gsap.to(overlay, {
       yPercent: 100,
       ease: 'expo.inOut',
+      duration: 1.2,
       scrollTrigger: {
         trigger: cont,
-        start: 'top bottom',
-        end: 'top 80%',
+        start: 'top 90&',
+        // end: 'top 80%',
         // scrub: true,
       },
     })
