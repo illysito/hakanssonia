@@ -38,7 +38,7 @@ function gallery() {
     const randomAmp = 52
     const random = randomAmp * Math.random() - randomAmp / 2
     gsap.to(cont, {
-      y: 140 + random,
+      y: 160 + random,
       scrollTrigger: {
         trigger: cont,
         start: 'top 120%',
