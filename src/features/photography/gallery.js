@@ -24,7 +24,7 @@ function gallery() {
     )
 
     imgContainers.forEach((cont) => {
-      img.dataset.inViewport = 'false'
+      cont.dataset.inViewport = 'false'
       observer.observe(cont)
     })
   }
