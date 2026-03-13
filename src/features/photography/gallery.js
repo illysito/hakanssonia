@@ -41,6 +41,7 @@ function gallery() {
     const overlay = img.nextElementSibling
     gsap.to(overlay, {
       yPercent: 100,
+      ease: 'expo.inOut',
       scrollTrigger: {
         trigger: cont,
         start: 'top bottom',
