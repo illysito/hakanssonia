@@ -35,12 +35,6 @@ function gallery() {
 
   // PARALLAX
   imgContainers.forEach((cont) => {
-    if (cont.dataset.inViewport !== 'true') {
-      // console.log('ciao')
-      return
-    } else {
-      console.log('yeka')
-    }
     const randomAmp = 32
     const random = randomAmp * Math.random() - randomAmp / 2
     gsap.to(cont, {
@@ -55,7 +49,6 @@ function gallery() {
   })
 
   // WINDOW EFFECT
-
   let mouseX = 0
   let mouseY = 0
 
@@ -75,12 +68,17 @@ function gallery() {
         // console.log('ciao')
         return
       }
-      gsap.quickTo(img, {
-        x: -normalizedX,
-        y: -normalizedY,
-        duration: 1.6,
-        // ease: 'power2.inOut',
-      })
+      // gsap.quickTo(img, {
+      //   x: -normalizedX,
+      //   y: -normalizedY,
+      //   duration: 1.6,
+      //   // ease: 'power2.inOut',
+      // })
+      const xTo = gsap.quickTo(img, 'x', { duration: 1.6 })
+      const yTo = gsap.quickTo(img, 'y', { duration: 1.6 })
+
+      xTo(-normalizedX)
+      yTo(-normalizedY)
     })
 
     requestAnimationFrame(windowEffect)
