@@ -64,7 +64,7 @@ function gallery() {
       gsap.to(img, {
         x: -normalizedX,
         y: -normalizedY,
-        duration: 0.8,
+        duration: 1.6,
       })
     })
 
