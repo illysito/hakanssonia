@@ -35,7 +35,7 @@ function gallery() {
 
   // PARALLAX
   imgContainers.forEach((cont) => {
-    if (cont.dataset.inViewport !== true) {
+    if (cont.dataset.inViewport !== 'true') {
       // console.log('ciao')
       return
     } else {
@@ -71,7 +71,7 @@ function gallery() {
     imgs.forEach((img) => {
       const wrapper = img.parentElement
       const cont = wrapper.parentElement
-      if (cont.dataset.inViewport !== true) {
+      if (cont.dataset.inViewport !== 'true') {
         // console.log('ciao')
         return
       }
