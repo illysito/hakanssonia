@@ -62,9 +62,9 @@ function gallery() {
     )
     imgs.forEach((img) => {
       gsap.to(img, {
-        x: normalizedX,
-        y: normalizedY,
-        duration: 0.2,
+        x: -normalizedX,
+        y: -normalizedY,
+        duration: 0.8,
       })
     })
 
