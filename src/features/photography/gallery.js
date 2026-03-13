@@ -61,6 +61,8 @@ function gallery() {
       8,
       mouseY
     )
+    const randomAmp = 2
+    const random = randomAmp * Math.random()
     imgs.forEach((img) => {
       const wrapper = img.parentElement
       const cont = wrapper.parentElement
@@ -77,8 +79,8 @@ function gallery() {
       const xTo = gsap.quickTo(img, 'x', { duration: 1.6 })
       const yTo = gsap.quickTo(img, 'y', { duration: 1.6 })
 
-      xTo(-normalizedX)
-      yTo(-normalizedY)
+      xTo(-normalizedX * random)
+      yTo(-normalizedY * random)
     })
 
     requestAnimationFrame(windowEffect)
