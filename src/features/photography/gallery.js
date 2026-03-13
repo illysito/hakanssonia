@@ -16,7 +16,7 @@ function gallery() {
             ? 'true'
             : 'false'
 
-          console.log(entry)
+          // console.log(entry)
         })
       },
       {
