@@ -37,9 +37,18 @@ function gallery() {
   imgContainers.forEach((cont) => {
     const randomAmp = 52
     const random = randomAmp * Math.random() - randomAmp / 2
+    const img = cont.firstElementChild.firstElementChild
     gsap.to(cont, {
       y: 160 + random,
-      scale: 1.04,
+      scrollTrigger: {
+        trigger: cont,
+        start: 'top 120%',
+        end: 'bottom top',
+        scrub: true,
+      },
+    })
+    gsap.to(img, {
+      scale: 1.02,
       scrollTrigger: {
         trigger: cont,
         start: 'top 120%',
