@@ -75,8 +75,8 @@ function gallery() {
         // console.log('ciao')
         return
       }
-      const randomAmp = 2
-      const random = randomAmp * Math.random()
+      // const randomAmp = 2
+      const random = 1
       // gsap.quickTo(img, {
       //   x: -normalizedX,
       //   y: -normalizedY,
