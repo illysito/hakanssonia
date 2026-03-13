@@ -33,7 +33,7 @@ function gallery() {
 
   // PARALLAX
   imgContainers.forEach((cont) => {
-    if (!cont.dataset.inViewport) {
+    if (cont.dataset.inViewport !== true) {
       console.log('ciao')
       return
     }
@@ -67,11 +67,11 @@ function gallery() {
     imgs.forEach((img) => {
       const wrapper = img.parentElement
       const cont = wrapper.parentElement
-      if (!cont.dataset.inViewport) {
+      if (cont.dataset.inViewport !== true) {
         console.log('ciao')
         return
       }
-      gsap.to(img, {
+      gsap.quickTo(img, {
         x: -normalizedX,
         y: -normalizedY,
         duration: 1.6,
