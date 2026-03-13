@@ -22,9 +22,9 @@ function runGalleryFunctions() {
 //   videos()
 // }
 
-if (document.body.classList.contains('body__home')) runHomeFunctions()
+// if (document.body.classList.contains('body__home')) runHomeFunctions()
 if (document.body.classList.contains('body__fotografia')) runGalleryFunctions()
-if (document.body.classList.contains('body__video')) runVideoFunctions()
+// if (document.body.classList.contains('body__video')) runVideoFunctions()
 
 // nav()
 // footer()
