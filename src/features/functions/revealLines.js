@@ -7,7 +7,7 @@ import SplitType from 'split-type'
 gsap.registerPlugin(ScrollTrigger)
 
 function revealLines(input) {
-  // console.log(input)
+  console.log(input)
   // const input = document.querySelector('.content-h')
 
   // split hero heading
