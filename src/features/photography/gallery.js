@@ -34,8 +34,10 @@ function gallery() {
   // PARALLAX
   imgContainers.forEach((cont) => {
     if (cont.dataset.inViewport !== true) {
-      console.log('ciao')
+      // console.log('ciao')
       return
+    } else {
+      console.log('yeka')
     }
     const randomAmp = 32
     const random = randomAmp * Math.random() - randomAmp / 2
@@ -68,7 +70,7 @@ function gallery() {
       const wrapper = img.parentElement
       const cont = wrapper.parentElement
       if (cont.dataset.inViewport !== true) {
-        console.log('ciao')
+        // console.log('ciao')
         return
       }
       gsap.quickTo(img, {
