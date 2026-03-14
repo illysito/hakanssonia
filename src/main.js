@@ -1,9 +1,13 @@
+import menu from './features/general/menu'
 import gallery from './features/photography/gallery'
-import intro from './features/photography/intro'
+import ui from './features/photography/ui'
 
 import './styles/style.css'
 
 console.log('Sonia 2026')
 
-intro()
+const gallerySection = document.querySelector('.gallery__section-new')
+
+menu(gallerySection)
+ui()
 gallery()

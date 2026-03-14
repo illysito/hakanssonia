@@ -39,15 +39,21 @@ function gallery() {
     const random = randomAmp * Math.random() - randomAmp / 2
     const img = cont.firstElementChild.firstElementChild
     const overlay = img.nextElementSibling
+
     gsap.to(overlay, {
       yPercent: 100,
       ease: 'expo.inOut',
-      duration: 1.2,
+      duration: 1.8,
       scrollTrigger: {
         trigger: cont,
-        start: 'top 90%',
+        start: 'top 120%',
         // end: 'top 80%',
         // scrub: true,
+      },
+      onComplete: () => {
+        gsap.set(overlay, {
+          yPercent: -100,
+        })
       },
     })
     gsap.to(cont, {
