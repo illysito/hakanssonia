@@ -7,6 +7,20 @@ function menu(mainSection) {
   const lineTwo = burgerWrapper.lastElementChild
   const navHs = document.querySelectorAll('.nav-menu-h')
   const contactPs = document.querySelectorAll('.menu-contact-p')
+  const links = document.querySelectorAll('.nav-menu-link')
+  // const homeLink = document.querySelector('.home-link')
+  const linkDots = document.querySelectorAll('.nav-menu-dot')
+
+  let dotPositions = []
+  function computeDotPositions() {
+    linkDots.forEach((d) => {
+      const rect = d.getBoundingClientRect()
+      const left = rect.left
+      dotPositions.push(left)
+    })
+    // console.log(dotPositions)
+  }
+  computeDotPositions()
 
   let isClicked = false
 
@@ -58,6 +72,11 @@ function menu(mainSection) {
       y: 0,
       duration: 0.8,
     })
+    gsap.to(linkDots, {
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power2.inOut',
+    })
   }
 
   function animateBurger() {
@@ -99,6 +118,36 @@ function menu(mainSection) {
 
   burgerWrapper.addEventListener('click', () => {
     animateBurger()
+  })
+
+  links.forEach((l, index) => {
+    const linkH = l.firstElementChild
+    l.addEventListener('mouseenter', () => {
+      gsap.to(linkH, {
+        opacity: 0.6,
+        duration: 0,
+      })
+      gsap.to(linkDots[0], {
+        opacity: 1,
+        x: dotPositions[index] - dotPositions[0],
+        duration: 0.8,
+        ease: 'power3.inOut',
+      })
+    })
+    l.addEventListener('mouseleave', () => {
+      gsap.to(linkH, {
+        opacity: 1,
+        duration: 0,
+      })
+    })
+    l.addEventListener('click', () => {
+      animateBurger()
+    })
+  })
+
+  window.addEventListener('resize', () => {
+    dotPositions = []
+    computeDotPositions()
   })
 }
 
