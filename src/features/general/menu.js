@@ -12,6 +12,8 @@ function menu(mainSection) {
   // const homeLink = document.querySelector('.home-link')
   const linkDots = document.querySelectorAll('.nav-menu-dot')
   const overlay = document.querySelector('.overlay__section')
+  // const overlayDots = document.querySelectorAll('.overlay-dot')
+  const overlayDots = document.querySelectorAll('.overlay-dot-container')
 
   let dotPositions = []
   function computeDotPositions() {
@@ -124,6 +126,16 @@ function menu(mainSection) {
       yPercent: 0,
       duration: 1.8,
       ease: 'expo.inOut',
+      // onComplete: () => {
+      //   window.location.href = link
+      // },
+    })
+    gsap.from(overlayDots, {
+      // delay: 0.2,
+      y: 200,
+      stagger: 0.1,
+      duration: 1.8,
+      ease: 'expo.inOut',
       onComplete: () => {
         window.location.href = link
       },
@@ -145,7 +157,7 @@ function menu(mainSection) {
       gsap.to(linkDots[0], {
         opacity: 1,
         x: dotPositions[index] - dotPositions[0],
-        duration: 0.8,
+        duration: 0.72,
         ease: 'power3.inOut',
       })
     })
