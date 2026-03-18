@@ -7,9 +7,11 @@ function menu(mainSection) {
   const lineTwo = burgerWrapper.lastElementChild
   const navHs = document.querySelectorAll('.nav-menu-h')
   const contactPs = document.querySelectorAll('.menu-contact-p')
+  const homeLink = document.querySelector('.home-link')
   const links = document.querySelectorAll('.nav-menu-link')
   // const homeLink = document.querySelector('.home-link')
   const linkDots = document.querySelectorAll('.nav-menu-dot')
+  const overlay = document.querySelector('.overlay__section')
 
   let dotPositions = []
   function computeDotPositions() {
@@ -116,6 +118,19 @@ function menu(mainSection) {
     isClicked = !isClicked
   }
 
+  function transition(link) {
+    gsap.to(overlay, {
+      delay: 0.2,
+      yPercent: 0,
+      duration: 1.8,
+      ease: 'expo.inOut',
+      onComplete: () => {
+        window.location.href = link
+      },
+    })
+    console.log(link)
+  }
+
   burgerWrapper.addEventListener('click', () => {
     animateBurger()
   })
@@ -140,9 +155,19 @@ function menu(mainSection) {
         duration: 0,
       })
     })
-    l.addEventListener('click', () => {
+    l.addEventListener('click', (e) => {
+      e.preventDefault()
+      const link = l.href
       animateBurger()
+      transition(link)
     })
+  })
+
+  homeLink.addEventListener('click', (e) => {
+    e.preventDefault()
+    const link = homeLink.href
+    // animateBurger()
+    transition(link)
   })
 
   window.addEventListener('resize', () => {
